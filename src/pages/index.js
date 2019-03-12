@@ -15,7 +15,7 @@ class IndexPage extends Component {
         axios.get('http://www.allomatch.com/iphone.php/match/upcomingMatches/version/2')
              .then(response => {
                  console.log('good ! ', response.data.length, ' matches found ', response.data);
-                 this.setState({comingMatches: response.data.slice(0, 10)});
+                 this.setState({comingMatches: response.data.filter(match=> match.isImportant).slice(0, 20)});
              })
              .catch(error => {
                  console.log(error);
