@@ -14,7 +14,7 @@ class MatchesForSpecificDay extends Component {
     constructor(props) {
         super(props);
         this.state = {showAllMatches: props.matches.length < 4};
-        console.log('show all matches', props.matches.length < 4);
+        // console.log('show all matches', props.matches.length < 4);
     }
 
     render() {
