@@ -1,0 +1,50 @@
+.match {
+    background: #ffffff url(http://www.allomatch.com/images/new/match_background.jpg) no-repeat 50% 0;
+    width: 406px;
+    height: 77px;
+    margin: 6px 0 12px;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.small-text {
+    font-size: 10px;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.justify-content-space-around {
+    display: flex;
+    justify-content: space-around;
+}
+.justify-content-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+
+.margin-10-auto {
+    margin: 10px auto;
+}
