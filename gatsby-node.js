@@ -33,7 +33,7 @@ exports.createPages = async ({actions: {createPage}}) => {
 
     // Create a page that lists all matches with channels to watch.
     createPage({
-        path: `/bar`,
+        path: `/bars`,
         component: require.resolve('./src/pages/index.js'),
     });
 
