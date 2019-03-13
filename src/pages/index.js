@@ -14,7 +14,8 @@ class IndexPage extends Component {
 
         return <Layout menuSelected={1} headerText=' fake bar page'>
             <ResearchBar placeHolder='Bar'
-                         onSearch={searchCriteria => console.log(searchCriteria)}/> //TODO delete
+                         onSearch={searchCriteria => console.log(searchCriteria)}/>
+            {/* TODO delete */}
             <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
             <div className='flex justify-content-space-around'>
                 <h1>Page accueil : choisir lien ci dessous :</h1>
