@@ -37,14 +37,14 @@ exports.createPages = async ({actions: {createPage}}) => {
         component: require.resolve('./src/pages/index.js'),
     });
 
-    // Create a page for each match.
-    matches.forEach(match => {
-        createPage({
-            path: `/match/${match.uid}/`,
-            component: require.resolve('./src/pages/match.js'),
-            context: {match},
-        });
-    });
+    // // Create a page for each match.
+    // matches.forEach(match => {
+    //     createPage({
+    //         path: `/match/${match.uid}/`,
+    //         component: require.resolve('./src/pages/match.js'),
+    //         context: {match},
+    //     });
+    // });
 };
 
 const BASE_URL = 'http://www.allomatch.com/iphone.php/';
