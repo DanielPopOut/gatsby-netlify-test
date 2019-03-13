@@ -6,19 +6,6 @@ import SEO from '../components/seo';
 import axios from 'axios';
 import '../components/index.css';
 
-// This query is executed at build time by Gatsby.
-export const GatsbyQuery = graphql`
-  {
-    rickAndMorty {
-      character(id: 1) {
-        name
-        image
-      }
-    }
-  }
-`;
-
-
 class IndexPage extends Component {
     state = {
         comingMatches: [],
@@ -42,9 +29,6 @@ class IndexPage extends Component {
         // const rickAndMorty = this.props.data;
         // const character = {...rickAndMorty};
         // console.log('character', character);
-        const {
-            rickAndMorty: { character },
-        } = this.props.data;
 
         return <Layout>
             <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
@@ -53,15 +37,6 @@ class IndexPage extends Component {
                 <button onClick={() => {this.fetchMatchesToCome();}}>
                     Find matchs
                 </button>
-            </div>
-            <h1>{character.name} With His Pupper</h1>
-            <p>Rick & Morty API data loads at build time.</p>
-            <div>
-                <img
-                    src={character.image}
-                    alt={character.name}
-                    style={{ width: 300 }}
-                />
             </div>
             <div>{this.state.comingMatches.map(match => <MatchToCome match={match}/>)}</div>
 
