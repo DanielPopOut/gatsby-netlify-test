@@ -5,7 +5,6 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import axios from 'axios';
 import '../components/index.css';
-import ClientFetchingExample from '../components/ClientFetchingExample';
 
 // This query is executed at build time by Gatsby.
 export const GatsbyQuery = graphql`
@@ -66,7 +65,6 @@ class IndexPage extends Component {
             </div>
             <div>{this.state.comingMatches.map(match => <MatchToCome match={match}/>)}</div>
 
-            <ClientFetchingExample />
             <Link to="/page-2/">Go to pa2ge Loup Test2</Link>
         </Layout>;
 
