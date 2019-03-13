@@ -1,9 +1,11 @@
 
 import axios from 'axios';
 
-export default class dataRequestsService  {
-    BASE_URL = 'http://www.allomatch.com/iphone.php/';
+const BASE_URL = 'http://www.allomatch.com/iphone.php/';
 
-    getUpComingMatches = axios.get(baseUrl + 'match/upcomingMatches/version/2')
+
+export default class DataRequestsService  {
+
+    static getUpComingMatches = () => axios.get(BASE_URL + 'match/upcomingMatches/version/2').then(response =>response.data);
 
 }

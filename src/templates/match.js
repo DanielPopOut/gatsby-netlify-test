@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 export default ({ pageContext: { match } }) => (
     <div className='match column margin-10-auto'>
-        <div className='small-text justify-content-space-between'>
+        <div className='text-small justify-content-space-between'>
             <span>{match.sportName + ' - ' + match.tournamentText}</span>
             <span>{match.datetime}</span>
         </div>

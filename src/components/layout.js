@@ -5,16 +5,15 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql, StaticQuery } from 'gatsby';
+import './layout.css';
+import BottomAppBar from './bars/bottomAppBar';
 
-import Header from "./header"
-import "./layout.css"
-
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
+const Layout = ({children, menuSelected, headerText}) => (
+    <StaticQuery
+        query={graphql`
       query SiteTitleQuery {
         site {
           siteMetadata {
@@ -23,31 +22,35 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
-      <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
-        </div>
-      </>
-    )}
-  />
-)
+        render={data => (
+            <div>
+                {/*<Header siteTitle={data.site.siteMetadata.title} />*/}
+                <div
+                    style={{
+                        margin: `0 auto`,
+                        maxWidth: 960,
+                        paddingTop: 0,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        maxHeight: '100%',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                    }}
+                    className='height-100 position-absolute '
+                >
+                    <div className='allomatch-banner'>Allomatch : {headerText}</div>
+                    <main className='flex-1 overflow-scroll'>{children}</main>
+                    <BottomAppBar selected={menuSelected}/>
+                </div>
+            </div>
+        )}
+    />
+);
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+    children: PropTypes.node.isRequired,
+};
 
-export default Layout
+export default Layout;
