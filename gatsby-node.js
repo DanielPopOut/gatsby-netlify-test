@@ -17,6 +17,12 @@ exports.createPages = async ({actions: {createPage}}) => {
         component: require.resolve('./src/pages/matches.js'),
         context: {matches},
     });
+    // Create a page that lists all Matches.
+    createPage({
+        path: `/match`,
+        component: require.resolve('./src/pages/matches.js'),
+        context: {matches},
+    });
 
     // Create a page that lists all matches with dynamic fetching.
     createPage({
